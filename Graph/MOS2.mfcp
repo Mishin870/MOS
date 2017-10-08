@@ -1,0 +1,6 @@
+<project>Graph</project>
+<path>/home/mishin870/MOS/Graph/</path>
+<compile>cg.sh</compile>
+<src>boot.asm</src>
+<src>kernel.asm</src>
+<src>OS.asm</src>

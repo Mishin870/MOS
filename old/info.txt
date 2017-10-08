@@ -1,0 +1,15 @@
+Функция ah = 00h, int 10h
+AL  Тип      формат   цвета          адаптер  адрес монитор
+=== =======  =======  =============  =======  ====  =================
+0  текст    40x25    16/8 полутона  CGA,EGA  b800  Composite
+1  текст    40x25    16/8           CGA,EGA  b800  Comp,RGB,Enhanced
+2  текст    80x25    16/8 полутона  CGA,EGA  b800  Composite
+3  текст    80x25    16/8           CGA,EGA  b800  Comp,RGB,Enhanced
+4  графика  320x200  4              CGA,EGA  b800  Comp,RGB,Enhanced
+5  графика  320x200  4 полутона     CGA,EGA  b800  Composite
+6  графика  640x200  2              CGA,EGA  b800  Comp,RGB,Enhanced
+7  текст    80x25    3 (b/w/bold)   MA,EGA   b000  TTL Monochrome
+0dH графика  320x200  16             EGA      A000  RGB,Enhanced
+0eH графика  640x200  16             EGA      A000  RGB,Enhanced
+0fH графика  640x350  3 (b/w/bold)   EGA      A000  Enhanced,TTL Mono
+10H графика  640x350  4 или 16       EGA      A000  Enhanced

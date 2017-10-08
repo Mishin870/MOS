@@ -1,0 +1,6 @@
+<project>Mishin870-OS</project>
+<path>/home/mishin870/MOS/Unreal Huge/</path>
+<compile>cg.sh</compile>
+<src>boot.asm</src>
+<src>kernel.asm</src>
+<src>OS.asm</src>

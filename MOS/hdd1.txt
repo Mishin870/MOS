@@ -1,0 +1,50 @@
+HddBaseFS                      dd 0x1f0                            ; First device =0x1f0 for primary, second =0x170 for secondary device.
+MasterSlave                       db 0x00                             ; Master = 0x00 Slave = 0x10.
+
+HddReadFS:
+pushad
+push  eax
+newhdreadFS:
+mov edx,[HddBaseFS]
+inc   edx
+mov   al,0
+out   dx,al
+
+inc   edx
+mov   al,1
+out   dx,al
+
+inc   edx
+pop   ax
+out   dx,al
+
+inc   edx
+shr   ax,8
+out   dx,al
+
+inc   edx
+pop   ax
+out   dx,al
+
+inc   edx
+shr   ax,8
+and   al,1+2+4+8
+add   al,[MasterSlave]
+add   al,128+64+32
+out   dx,al
+
+inc   edx
+mov   al,20h
+out   dx,al
+hddwaitFS:
+in    al,dx
+test  al,128
+jnz   hddwaitFS
+
+mov   edi,dword[HddScratchBuffer]
+mov   ecx,256
+mov edx,[HddBaseFS]
+cld
+rep   insw
+popad
+ret

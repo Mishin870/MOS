@@ -1,0 +1,44 @@
+===========0h==================
+	BOOT SECTOR	(200h)
+==========200h=================
+	EMPTY		(300h)
+==========500h=================
+	KERNEL24/32	(2000h)
+==========2500h================
+	LDT, TASKS	(500h)
+==========3000h================
+	PROGRAMS
+===============================
+
+
+-------------------LDT, TASKS STRUCTURE (500h = 1280)---------------------
+LDT:
+	entry (8 bytes)
+	len - 1 (2 bytes)
+	pointer (4 bytes)
+	==================
+	14 bytes
+
+TASK:
+	eip (4 bytes)
+	eflags (4 bytes)
+	eax (4 bytes)
+	ebx (4 bytes)
+	ecx (4 bytes)
+	edx (4 bytes)
+	ebp (4 bytes)
+	esi (4 bytes)
+	edi (4 bytes)
+	es (4 bytes)
+	cs (4 bytes)
+	ss (4 bytes)
+	ds (4 bytes)
+	fs (4 bytes)
+	gs (4 bytes)
+	==================
+	60 bytes
+==============================
+74 bytes/task
+
+-------------------------------------------------------------------
+1280 / 74 ~= 17 tasks
